@@ -5,7 +5,7 @@ const Controller = require('egg').Controller;
 class HomeController extends Controller {
     async index() {
         const { ctx } = this;
-        ctx.body = 'hi, egg';
+        ctx.body = '欢迎使用本教程，我的后端技术栈是egg.js!'
     }
     async upload () {
         const { ctx } = this;
