@@ -18,6 +18,11 @@ module.exports = appInfo => {
       hostname: '0.0.0.0',
     }
   };
+  config.security = {
+    csrf: {
+      enable: false
+    }
+  }
   config.mysql = {
     // database configuration
     client: {
@@ -37,6 +42,7 @@ module.exports = appInfo => {
     // load into agent, default is close
     agent: false,
   };
+  
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1583512367261_5872';
 
