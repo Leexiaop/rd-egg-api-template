@@ -5,8 +5,14 @@ const Controller = require('egg').Controller;
 class PositionController extends Controller {
     async index ({app}) {
         let params = this.ctx.query
-        const total = (await app.mysql.select('slider_position')).length
-        const results = await app.mysql.select('slider_position', { limit: params.limit, offset: params.offset - 1 })
+        let total = 0
+        let options = {}
+        if (params.limit && params.offset) {
+            total = (await app.mysql.select('slider_position')).length
+            options.limit = params.limit
+            options.offset = params.offset - 1
+        }
+        const results = await app.mysql.select('slider_position', options)
         this.ctx.body = {
             code: 0,
             message: 'success',
