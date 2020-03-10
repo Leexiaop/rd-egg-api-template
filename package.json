@@ -7,9 +7,14 @@
     "declarations": true
   },
   "dependencies": {
+    "await-stream-ready": "^1.0.1",
     "egg": "^2.15.1",
     "egg-mysql": "^3.0.0",
-    "egg-scripts": "^2.11.0"
+    "egg-scripts": "^2.11.0",
+    "egg-view-assets": "^1.6.0",
+    "egg-view-nunjucks": "^2.2.0",
+    "md5": "^2.2.1",
+    "stream-wormhole": "^1.1.0"
   },
   "devDependencies": {
     "autod": "^3.0.1",
@@ -26,7 +31,7 @@
   "scripts": {
     "start": "egg-scripts start --daemon --title=egg-server-hooks-platform-egg",
     "stop": "egg-scripts stop --title=egg-server-hooks-platform-egg",
-    "dev": "egg-bin dev",
+    "dev": "egg-bin dev --port 5204",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
