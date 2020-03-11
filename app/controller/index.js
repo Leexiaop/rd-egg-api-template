@@ -18,6 +18,28 @@ class HomeController extends Controller {
             }
         }
     }
+    async login ({app}) {
+        console.log(this.ctx.user)
+        const res = await app.mysql.get('users', {username: this.ctx.request.body.username, password: this.ctx.request.body.password})
+        if (!res) throw new Error('No authorization token was')
+        this.ctx.body = {
+            code: 0,
+            message: res ? '登录成功' : '请重新登录',
+            data: {
+                token: app.jwt.sign({
+                    username: this.ctx.request.body.username,
+                    password: this.ctx.request.body.password
+                }, app.config.jwt.secret),
+                userInfo: {
+                    id: res.id,
+                    username: res.username,
+                    name: res.name,
+                    authority: res.authority,
+                    avatar: res.avatar
+                }
+            }
+        }
+    }
     async upload () {
         const ctx = this.ctx;
         const stream = await ctx.getFileStream();
