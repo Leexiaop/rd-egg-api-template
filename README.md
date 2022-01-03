@@ -1,4 +1,4 @@
-# hooks-platform-egg
+# rd-egg-api-template
 
 this is a egg.js progrem
 

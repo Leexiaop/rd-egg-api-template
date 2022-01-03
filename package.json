@@ -1,5 +1,5 @@
 {
-  "name": "hooks-platform-egg",
+  "name": "rd-egg-api-template",
   "version": "1.0.0",
   "description": "this is a egg.js progrem",
   "private": true,
@@ -33,8 +33,8 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-hooks-platform-egg",
-    "stop": "egg-scripts stop --title=egg-server-hooks-platform-egg",
+    "start": "egg-scripts start --daemon --title=egg-server-rd-egg-api-template",
+    "stop": "egg-scripts stop --title=egg-server-rd-egg-api-template",
     "dev": "egg-bin dev --port 5204",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
